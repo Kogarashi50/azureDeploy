@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 8080; 
 
 // On Azure Linux, /home is the best place to write persistent files
-const FILE = path.join("/home", "visits.json");
+const FILE = path.join(__dirname, "visits.json");
 
 let lock = false;
 
