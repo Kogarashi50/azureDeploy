@@ -3,12 +3,10 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-
-// Let Azure pick the port (usually 8080 or 80)
 const PORT = process.env.PORT || 8080; 
 
-// On Azure Linux, /home is the best place to write persistent files
-const FILE = path.join("/home", "visits.json");
+// Fixed path to stay within the app directory
+const FILE = path.join(__dirname, "visits.json");
 
 let lock = false;
 
@@ -56,5 +54,6 @@ app.get("/", async (req, res) => {
 });
 
 app.listen(PORT, () => {
+    // Fixed backticks here
     console.log(`Server started on port ${PORT}`);
 });
