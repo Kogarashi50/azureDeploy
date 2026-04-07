@@ -14,6 +14,6 @@ jobs:
       - run: zip -r app.zip .
       - uses: azure/webapps-deploy@v3
         with:
-          app-name: 'abdelhamid-assamure' # Votre nom d'app sur Azure
+          app-name: 'abdelhamis-assamure' 
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: app.zip
